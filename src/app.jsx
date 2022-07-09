@@ -1,10 +1,8 @@
 import react, { useState } from "react"
-import dom from "react-dom"
-import Typography from '@mui/material/Typography';
 import Form from "./form"
 import AppBar from '@mui/material/AppBar';
 import Note from "./note";
-import { width } from "@mui/system";
+
 var arr1=[{
     title:"",
     content:""
@@ -24,10 +22,15 @@ function App()
     {
         setarr( prev =>
             {
+                let k=0;
               return  prev.filter(x =>
                     {
+                        if(k==1)
+                            return x;
                         if(x.title!=Title || x.content!=Content)
                             return x;
+                        else
+                            k=1;
                     })
                 
             })
