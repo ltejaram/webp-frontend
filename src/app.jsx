@@ -2,21 +2,16 @@ import react, { useState } from "react"
 import Form from "./form"
 import AppBar from '@mui/material/AppBar';
 import Note from "./note";
-
-var arr1=[{
-    title:"",
-    content:""
-}];
 function App()
 {
-    const [arr,setarr]=useState(arr1)
+    const [arr,setarr]=useState([])
     function clicked(x)
     {
         setarr(prev =>
             {
                 return [...prev,x];
             })
-        console.log(arr);
+        
     }
     function deletenote(Title,Content)
     {
