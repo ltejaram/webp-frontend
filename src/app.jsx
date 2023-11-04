@@ -13,7 +13,7 @@ import { Routes, Route, useLocation, useNavigate,Navigate } from 'react-router-d
 import PrivateRoutes from "./privateRoutes";
 import NoData from "./noData";
 
-
+export const sql_uri="https://webp-backend.onrender.com"
 function App()
 {
   const location=useLocation();

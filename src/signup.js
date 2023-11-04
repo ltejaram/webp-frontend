@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { sql_uri } from "./app";
 
 function Signup()
 {
@@ -20,7 +20,7 @@ function Signup()
         let regx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if(regx.test(form.email) && form.password.length>=4 && form.phone.length==10 && form.name!="")
         {
-            axios.post("http://localhost:4000/register",form).then((res)=>{
+            axios.post(sql_uri+"/register",form).then((res)=>{
                 if(res.data=="success")
                     navigate("/login");
                 else    

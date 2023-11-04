@@ -2,7 +2,7 @@
 import axios  from "axios";
 import React, { useEffect, useState } from "react"
 import {  useLocation, useNavigate } from "react-router-dom";
-
+import { sql_uri } from "./app";
 function Info1()
 {
         const location=useLocation();
@@ -10,7 +10,7 @@ function Info1()
         console.log("teja "+location.state);
         const [data,setData]=useState({bus:[],driver:{},phone:[]});
         useEffect(()=>{
-          axios.post("http://localhost:4000/more-info",
+          axios.post("https://webp-backend.onrender.com/more-info",
           {bus_id:location.state})
           .then((res)=>{
             console.log(res);

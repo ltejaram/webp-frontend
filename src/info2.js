@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Button from '@mui/material/Button';
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { sql_uri } from "./app";
 
 function Info2({route,Navigation})
 {
@@ -15,7 +15,7 @@ function Info2({route,Navigation})
     }
     const [arr,setArr]=useState([]);
     useEffect(()=>{
-        axios.post("http://localhost:4000/search-by-location",
+        axios.post("https://webp-backend.onrender.com/search-by-location",
         {from:location.state.from,to:location.state.to})
         .then((res)=>{
           console.log("data is ",res.data);
