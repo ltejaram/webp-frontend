@@ -20,7 +20,7 @@ function Signup()
         let regx=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if(regx.test(form.email) && form.password.length>=4 && form.phone.length==10 && form.name!="")
         {
-            axios.post(sql_uri+"/register",form).then((res)=>{
+            axios.post("https://webp-backend.onrender.com/register",form).then((res)=>{
                 if(res.data=="success")
                     navigate("/login");
                 else    
